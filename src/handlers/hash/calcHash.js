@@ -7,7 +7,7 @@ const calculateHash = async (filePath) => {
             throw err;
         } else { 
             const hash = crypto.createHash('sha256').update(data).digest('hex');
-            console.log(hash);
+            console.log(`${hash}\n`);
         }
     });
 };

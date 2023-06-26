@@ -33,11 +33,9 @@ const handleCommand = async (command, value1, value2) => {
             await rename(oldPath, newPath);
         },
         cp: async () => {
-            console.log(dirname, value1, value2)
             const readablePath = path.join(dirname, value1);
             const { base: baseName } = path.parse(readablePath);
-            const writablePath = path.normalize(dirname, value2, baseName);
-            console.log(readablePath, writablePath)
+            const writablePath = path.join(dirname, value2, baseName);
 
             await copy(readablePath, writablePath);
         },
